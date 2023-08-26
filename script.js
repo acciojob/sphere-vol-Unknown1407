@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const radius = parseFloat(radiusInput.value);
     if (!isNaN(radius)) {
       const volume = calculateSphereVolume(radius);
-      volumeInput.value = volume.toFixed(2);
+      volumeInput.value = volume.toFixed(4);
     }
   });
 });
