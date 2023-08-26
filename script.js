@@ -1,6 +1,21 @@
-function volume_sphere() {
-    //Write your code here
-  
-} 
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('MyForm');
+  const radiusInput = document.getElementById('radius');
+  const volumeInput = document.getElementById('volume');
 
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the form from submitting
+
+    const radius = parseFloat(radiusInput.value);
+    if (!isNaN(radius)) {
+      const volume = calculateSphereVolume(radius);
+      volumeInput.value = volume.toFixed(2);
+    }
+  });
+});
+
+function calculateSphereVolume(radius) {
+  // The formula for the volume of a sphere: (4/3) * π * r^3
+  return (4 / 3) * Math.PI * Math.pow(radius, 3);
+}
