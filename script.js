@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const volume = calculateSphereVolume(radius);
       volumeInput.value = volume.toFixed(4);
     }
+	  else
+	{
+		volumeInput.value = 'NaN';
+	}
   });
 });
 
